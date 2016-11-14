@@ -49,4 +49,4 @@ client.on('guildCreate', (g) => {
   }
 });
 
-client.login('fucc off m8.exe');
+client.login('fucc off m8');
