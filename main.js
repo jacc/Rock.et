@@ -21,8 +21,7 @@ client.on('message', m => {
   if(!data.load().guilds[m.guild.id]) {
       data.save(data.load().guilds[m.guild.id] = {
           name: m.guild.name,
-          data: "blah",
-          data2: "blah"
+          speed: 100
       });
   }
   
