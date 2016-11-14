@@ -4,6 +4,7 @@
 const Discord  = require('discord.js');
 const client   = new Discord.Client();
 var fs = require("fs")
+const data = require(__dirname + '/data.js');
 var prefix = "r."
 //const reload   = require('require-reload');
 //const data     = require(__dirname + '/Modules/Data.js');
@@ -17,6 +18,14 @@ client.on('ready', () => {
 });
 
 client.on('message', m => {
+  if(!data.load().guilds[m.guild.id]) {
+      data.save(data.load().guilds[m.guild.id] = {
+          name: m.guild.name,
+          data: "blah",
+          data2: "blah"
+      });
+  }
+  
   var commands = fs.readdirSync("./commands/");
   if (m.content.startsWith(prefix)) {
     var command = m.content.split(" ")[0].replace("r.", "");
