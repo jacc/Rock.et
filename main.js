@@ -19,10 +19,11 @@ client.on('ready', () => {
 
 client.on('message', m => {
   if(!data.load().guilds[m.guild.id]) {
-      data.save(data.load().guilds[m.guild.id] = {
+      var d = data.load();
+      d.guilds[m.guild.id] = {
           name: m.guild.name,
           boost: 100
-      });
+      }
   }
   
   var commands = fs.readdirSync("./commands/");
@@ -50,8 +51,8 @@ client.on('guildCreate', (g) => {
 
   if(!data.load().servers[g.id]) {
     var d = data.load();
-    d.servers[g.id] = {
-      "speed": "100"
+    d.guilds[g.id] = {
+      boost: 100
     },
     data.save(d);
   }
