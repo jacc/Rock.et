@@ -64,4 +64,6 @@ client.on('guildDelete', (g) => {
   client.user.setGame(`r.help | ${client.guilds.size} ships`)
 
 });
+
+client.timeouts = {};
 client.login('noot');
