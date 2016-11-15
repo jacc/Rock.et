@@ -5,7 +5,7 @@ var allowed = {};
 
 module.exports.info = "placeholder.";
 module.exports.func = function(bot, m, args) {
-  if(allowed[m.guild.id]) {
+  if(!allowed[m.guild.id]) {
     msg.channel.sendMessage(":warning: **That command has a cooldown of 300 seconds. Please try again later.**");
   } else {
     m.delete();
