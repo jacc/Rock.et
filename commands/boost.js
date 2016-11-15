@@ -1,5 +1,5 @@
 const db = require(__dirname + '/../data.js');
-var zoom = ["zoot zoot", "WHAM!", ".....ZOOOOOOOMNMMMMMMM......", "FASTER!"]
+var zoom = ["ZOOT ZOOT", "WHAM!", ".....ZOOOOOOOMNMMMMMMM......", "FASTER!", "WIZZ", "PEW"]
 var z = zoom[Math.floor(Math.random() * answers.length)];
 
 module.exports.info = "placeholder.";
