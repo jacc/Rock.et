@@ -48,15 +48,20 @@ client.on('message', m => {
 });
 
 client.on('guildCreate', (g) => {
-  client.channels.get('247826860946358272').sendMessage("**Guild Joined** - "+g.name);
-
-  if(!data.load().servers[g.id]) {
+  client.channels.get('247826860946358272').sendMessage("**Guild Joined** - Owner: "+g.name+" - **"+g.owner+"** - __"+g.memberCount+"__ members.");
+  client.user.setGame(`r.help | ${client.guilds.size} ships`)
+  if(!data.load().guilds[g.id]) {
     var d = data.load();
     d.guilds[g.id] = {
       boost: 100
     },
-    data.save(d);
+      data.save(d);
   }
 });
 
-client.login('MjQ3NzU0MTI2MjAzNjgyODI2.CwzxxA.4CO_Ofl09SAkFKam6OWD5tQyYKU');
+client.on('guildDelete', (g) => {
+  client.channels.get('247826860946358272').sendMessage("**Guild Deleted** - Owner: "+g.name+" - **"+g.owner+"** - __"+g.memberCount+"__ members.");
+  client.user.setGame(`r.help | ${client.guilds.size} ships`)
+
+});
+client.login('noot');

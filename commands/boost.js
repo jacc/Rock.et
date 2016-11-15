@@ -1,5 +1,6 @@
 const db = require(__dirname + '/../data.js');
 var zoom = ["ZOOT ZOOT", "WHAM!", ".....ZOOOOOOOMNMMMMMMM......", "FASTER!", "WIZZ", "PEW"]
+var emoji = [":star:", ":star2:", ":stars:", ":rocket:", ":comet:", ":sparkles:", ":fireworks:", ":dizzy:", ":fire:"]
 
 module.exports.info = "placeholder.";
 module.exports.func = function(bot, m, args) {
@@ -9,7 +10,7 @@ module.exports.func = function(bot, m, args) {
     var d = db.load();
     d.guilds[m.guild.id].boost = num;
     db.save(d);
-    m.channel.sendMessage(`:rocket: | **${zoom[Math.floor(Math.random() * zoom.length)]}! Upgraded to ${num} miles per hour!**`)
+    m.channel.sendMessage(`${emoji[Math.floor(Math.random() * emoji.length)]} | **${zoom[Math.floor(Math.random() * zoom.length)]}! Upgraded to ${num} miles per hour!**`)
     m.delete();
   }).catch(console.error);
 }
