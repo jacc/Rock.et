@@ -5,7 +5,7 @@ var z = zoom[Math.floor(Math.random() * answers.length)];
 module.exports.info = "placeholder.";
 module.exports.func = function(bot, m, args) {
   m.delete();
-  .then( m => {
+  m.channel.sendMessage('wew').then( m => {
     var num = Math.floor(Math.random() * 5000) + 100;
     db.save(db.load().guilds[m.guild.id].boost = num);
     m.channel.sendMessage(`:rocket: | **${z}**! __${m.guild.name}__'s rocket is now at **${num} miles per hour!**`)  
