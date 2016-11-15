@@ -4,11 +4,12 @@ var zoom = ["ZOOT ZOOT", "WHAM!", ".....ZOOOOOOOMNMMMMMMM......", "FASTER!", "WI
 module.exports.info = "placeholder.";
 module.exports.func = function(bot, m, args) {
   m.delete();
-  m.channel.sendMessage('wew').then( m => {
-    var num = Math.floor(Math.random() * 5000) + 100;
+  m.channel.sendMessage('**Boosting...**').then( m => {
+    var num = Math.floor(Math.random() * 10000) + db.load().guilds[m.guild.id].boost;
     var d = db.load();
     d.guilds[m.guild.id].boost = num;
     db.save(d);
-    m.channel.sendMessage(`:rocket: | **${zoom[Math.floor(Math.random() * zoom.length)]}**! __${m.guild.name}__'s rocket is now at **${num} miles per hour!**`)  
+    m.channel.sendMessage(`:rocket: | **${zoom[Math.floor(Math.random() * zoom.length)]}! Upgraded to ${num} miles per hour!**`)
+    m.delete();
   }).catch(console.error);
 }

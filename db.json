@@ -1,4 +1,8 @@
 {
-	"name": "rock.et ship",
-	"speed": 100
+	"guilds": {
+		"247754424825413634": {
+			"name": "rock.et ship",
+			"boost": 35456
+		}
+	}
 }

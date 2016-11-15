@@ -19,13 +19,14 @@ client.on('ready', () => {
 
 client.on('message', m => {
   if(!data.load().guilds[m.guild.id]) {
-      var d = data.load();
-      d.guilds[m.guild.id] = {
-          name: m.guild.name,
-          boost: 100
-      }
+    var d = data.load();
+    d.guilds[m.guild.id] = {
+      name: m.guild.name,
+      boost: 100
+    }
+    data.save(d);
   }
-  
+
   var commands = fs.readdirSync("./commands/");
   if (m.content.startsWith(prefix)) {
     var command = m.content.split(" ")[0].replace("r.", "");
@@ -58,4 +59,4 @@ client.on('guildCreate', (g) => {
   }
 });
 
-client.login('fucc off m8');
+client.login('MjQ3NzU0MTI2MjAzNjgyODI2.CwzxxA.4CO_Ofl09SAkFKam6OWD5tQyYKU');
