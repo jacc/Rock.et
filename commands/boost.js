@@ -10,6 +10,7 @@ module.exports.func = function(bot, m, args) {
     var d = db.load();
     d.guilds[m.guild.id].boost = num;
     db.save(d);
+    bot.cooldowns[m.guild.id] = 300000;
     m.channel.sendMessage(`${emoji[Math.floor(Math.random() * emoji.length)]} | **${zoom[Math.floor(Math.random() * zoom.length)]}! Upgraded to ${num} miles per hour!**`)
     m.delete();
   }).catch(console.error);
