@@ -7,7 +7,7 @@ var fs = require("fs")
 const data = require(__dirname + '/data.js');
 var prefix = "r."
 //const reload   = require('require-reload');
-//const data     = require(__dirname + '/Modules/Data.js');
+const data     = require(__dirname + '/Modules/Data.js');
 //const request  = require('request');
 const version  = '1.0';
 
@@ -21,7 +21,7 @@ client.on('message', m => {
   if(!data.load().guilds[m.guild.id]) {
       data.save(data.load().guilds[m.guild.id] = {
           name: m.guild.name,
-          speed: 100
+          boost: 100
       });
   }
   
