@@ -1,7 +1,7 @@
 const db = require(__dirname + '/../data.js');
 var zoom = ["ZOOT ZOOT", "WHAM!", ".....ZOOOOOOOMNMMMMMMM......", "FASTER!", "WIZZ", "PEW"]
 var emoji = [":star:", ":star2:", ":stars:", ":rocket:", ":comet:", ":sparkles:", ":fireworks:", ":dizzy:", ":fire:"]
-var alloweed = {};
+var allowed = {};
 
 module.exports.info = "placeholder.";
 module.exports.func = function(bot, m, args) {
